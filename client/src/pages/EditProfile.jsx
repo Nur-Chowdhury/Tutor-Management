@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import profile from '../assets/userProfile.png';
+import profile from '../assets/userprofile.png';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import axios from 'axios';
 import { updateFailure, updateStart, updateSuccess } from '../redux/slices/userSlice';
