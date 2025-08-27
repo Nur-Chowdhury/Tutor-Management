@@ -15,6 +15,7 @@ dotenv.config();
 connectToDatabase();
 
 const app = express();
+const __dirname = path.resolve();
 const PORT = process.env.PORT; 
 
 app.use(express.json());
@@ -27,14 +28,13 @@ app.use('/api/user', userRoutes);
 app.use('/api/notification', notificationRoutes);
 app.use('/api/admin', adminRoutes);
 
-// Serve React frontend (production build)
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-app.use(express.static(path.join(__dirname, 'client', 'dist')));
+if (process.env.NODE_ENV === "production") {
+	app.use(express.static(path.join(__dirname, "/client/dist")));
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
-});
+	app.get("*", (req, res) => {
+		res.sendFile(path.resolve(__dirname, "client", "dist", "index.html"));
+	});
+}
 
 // Error handling middleware
 app.use((error, req, res, next) => {
