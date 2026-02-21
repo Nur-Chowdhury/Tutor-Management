@@ -44,7 +44,7 @@ export const adInterested = async (req, res) => {
             return res.status(404).send('Post not found');
         }
         await ad.toggleInterest(req.user.userId);
-        res.status(200).send(post);
+        res.status(200).send(ad);
     } catch (error) {
         res.status(500).send(error.message);
     }

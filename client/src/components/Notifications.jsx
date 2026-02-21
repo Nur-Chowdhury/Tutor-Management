@@ -35,7 +35,7 @@ export default function Notifications() {
         },
         withCredentials: true,
       };
-      const res = await axios.get(`${getAdRoute}/${id}`, config);
+      const res = await axios.get(`${getAdRoute}/${adId}`, config);
     } catch (error) {
       toast.log(error);
     }

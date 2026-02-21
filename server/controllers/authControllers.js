@@ -63,7 +63,8 @@ export const signin = async (req, res, next) => {
             return next(errorHandler(401, 'Invalid Credintials!'));
         }
     
-        const validPass = bcryptjs.compareSync(password, validUser.password);
+        const hashedPassword = await bcryptjs.hash(password, 10);
+        const validPass = await bcryptjs.compare(password, validUser.password);
     
         if (!validPass) {
             return next(errorHandler(401, 'Invalid Credintials!'));

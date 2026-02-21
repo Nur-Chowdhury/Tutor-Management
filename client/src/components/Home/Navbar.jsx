@@ -20,30 +20,30 @@ export default function Navbar() {
   return (
     <header className="bg-gray-200 dark:bg-gray-900 shadow-md py-2">
             <nav className="container mx-auto flex items-center justify-between px-6">
-                <Link href="#home">
+                <a href="#home">
                     <img src={logo} alt="Logo" className=" h-20 w-20" />
-                </Link>
+                </a>
 
                 <ul className="flex space-x-6">
                     <li>
-                        <Link href="#home">
+                        <a href="#home">
                             Home
-                        </Link>
+                        </a>
                     </li>
                     <li>
-                        <Link href="#faq" onClick={(e) => handleSmoothScroll(e, "#faq")}>
+                        <a href="#faq" onClick={(e) => handleSmoothScroll(e, "#faq")}>
                             FAQ
-                        </Link>
+                        </a>
                     </li>
                     <li>
-                        <Link href="#about" onClick={(e) => handleSmoothScroll(e, "#about")}>
+                        <a href="#about" onClick={(e) => handleSmoothScroll(e, "#about")}>
                             About Us
-                        </Link>
+                        </a>
                     </li>
                     <li>
-                        <Link href="#contact" onClick={(e) => handleSmoothScroll(e, "#contact")}>
+                        <a href="#contact" onClick={(e) => handleSmoothScroll(e, "#contact")}>
                             Contact
-                        </Link>
+                        </a>
                     </li>
                 </ul>
                 <div className=" flex justify-between gap-4">

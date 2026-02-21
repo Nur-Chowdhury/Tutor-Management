@@ -19,7 +19,7 @@ export default function SinglePost() {
     const [ad, setAd] = useState(null);
     const [loading, setLoading] = useState(false);
     const [postedBy, setpostedBy] = useState(null);
-    const [interested, setInterested] = useState(ad?.interested?.length | 0);
+    const [interested, setInterested] = useState(ad?.interested?.length || 0);
     const [showAll, setShowAll] = useState(0);
     const [interestedUsers, setInterestedUsers] = useState([]);
 

@@ -16,6 +16,11 @@ export const findUserById = async (req, res, next) => {
 export const updateUser = async (req, res, next) => {
     const id = req.user.userId; 
     const {row, data} = req.body;
+    const allowedFields = ['phone', 'currentCity', 'interestedTopics', 'profile'];
+    if (!allowedFields.includes(row)) {
+        return next(errorHandler(400, "Invalid field update requested."));
+    }
+    
     try {
         const user = await User.findById(id);
         const updatedUser = await User.findByIdAndUpdate(

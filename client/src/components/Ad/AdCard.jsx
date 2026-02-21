@@ -18,7 +18,7 @@ export default function AdCard({ad}) {
 
     const [pst, setPst] = useState(ad);
 
-    const [interested, setInterested] = useState(pst.interested?.length | 0);
+    const [interested, setInterested] = useState(pst.interested?.length || 0);
 
     console.log(currentUser);
 
